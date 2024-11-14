@@ -1,0 +1,29 @@
+---
+title: "Swiatek_Sabalenka_Rank"
+output: html_document
+date: "2024-11-14"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE,
+                      warning = FALSE, error = TRUE,
+                      fig.height = 3)
+library(tidyverse)
+```
+
+ijSld
+
+```{r}
+swiatek_stats = tibble(year = c(2019,2020,2021,2022,2023,2024),ranking = c(61,17,9,1,1,2))
+
+ggplot(swiatek_stats, aes(x = year, y = ranking)) + 
+  scale_y_reverse() +
+  geom_point() +
+  geom_smooth() + 
+  labs(
+    x = "Year on WTA Tour",
+    y = "Iga Swiatek's Ranking"
+  ) + 
+  theme_minimal()
+```
+
